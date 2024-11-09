@@ -2,38 +2,107 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "How much of the distribution lies between $-2\\sigma$ and $2\\sigma$  (where $\\sigma^2$ is the variance) ?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "90%",
+        "b": "5%",
+        "c": "70%",
+        "d": "95%"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect! More than 90%",
+        "b": "Incorrect! Around most of the distribution lies in the $-2\\sigma$ to $2\\sigma$ range.",
+        "c": "Incorrect! More than 70%",
+        "d": "Correct!"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+      "correctAnswer": "d",
+      "difficulty": "Easy"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "A random variable $X$ follows a standard normal distribution and another random variable $Y$ is given as $Y = 3\\cdot X +2$. If we know $\\mu_X=0$ and $\\sigma_X=1$, then what are the mean ($\\mu_Y$) and standard-deviation ($\\sigma_Y$) of Y?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "$\\mu_Y=0$ and $\\sigma_Y=1$",
+        "b": "$\\mu_Y=2$ and $\\sigma_Y=1$",
+        "c": "$\\mu_Y=2$ and $\\sigma_Y=3$",
+        "d": "$\\mu_Y=-$ and $\\sigma_Y=3$"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "$\\mu_Y=a \\mu_X + b$ and $\\sigma_Y=|a| \\sigma_X$",
+        "b": "$\\mu_Y=a \\mu_X + b$ and $\\sigma_Y=|a| \\sigma_X$",
+        "c": "Correct Answer!",
+        "d": "$\\mu_Y=a \\mu_X + b$ and $\\sigma_Y=|a| \\sigma_X$"
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Let $X \\sim N(0, I_2)$ be a two-dimensional standard normal random vector, where $I_2$ is the $2\\times2$ identity matrix. What is the distribution of $Y = AX$, where $A = \\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$?",
+      "answers": {
+        "a": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix})$",
+        "b": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix})$",
+        "c": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix})$",
+        "d": "$Y \\sim N(\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix})$"
+      },
+      "explanations": {
+        "a": "Incorrect! The covariance matrix is not the identity after applying the transformation $A$.",
+        "b": "Correct! The new covariance matrix is $A \\Sigma_X A^T$, which results in $\\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix}$, as $\\Sigma_X = I_2$.",
+        "c": "Incorrect! You need to multiply $A$ and its transpose to get the correct covariance matrix.",
+        "d": "Incorrect! The mean vector of $Y$ is still zero since $X$ is centered at zero."
+      },
+      "correctAnswer": "b",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "Let $X \\sim N(\\mu_X, \\Sigma_X)$ be a Gaussian random vector in $\\mathbb{R}^3$, where $\\mu_X = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}$ and $\\Sigma_X = \\begin{bmatrix} 1 & 0.5 & 0 \\\\ 0.5 & 2 & 0.3 \\\\ 0 & 0.3 & 1 \\end{bmatrix}$. Find the marginal distribution of $X_1$ and $X_3$.",
+      "answers": {
+        "a": "$\\begin{bmatrix} X_1 \\\\ X_3 \\end{bmatrix} \\sim N\\left( \\begin{bmatrix} 1 \\\\ 3 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} \\right)$",
+        "b": "$\\begin{bmatrix} X_1 \\\\ X_3 \\end{bmatrix} \\sim N\\left( \\begin{bmatrix} 1 \\\\ 3 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\right)$",
+        "c": "$\\begin{bmatrix} X_1 \\\\ X_3 \\end{bmatrix} \\sim N\\left( \\begin{bmatrix} 1 \\\\ 3 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\right)$",
+        "d": "$\\begin{bmatrix} X_1 \\\\ X_3 \\end{bmatrix} \\sim N\\left( \\begin{bmatrix} 1 \\\\ 3 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix} \\right)$"
+      },
+      "explanations": {
+        "a": "Correct! The marginal distribution of $X_1$ and $X_3$ is obtained by selecting the corresponding submatrix of $\\Sigma_X$.",
+        "b": "Incorrect! You may have neglected to calculate the covariance matrix correctly.",
+        "c": "Incorrect! The marginal covariance is different.",
+        "d": "Incorrect! Check the submatrix corresponding to $X_1$ and $X_3$."
+      },
+      "correctAnswer": "a",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "When does a bivariate Gaussian pdf has negative covariance?",
+      "answers": {
+        "a": "When the slope of the principal axis of its pdf is positive",
+        "b": "When the slope of the principal axis of its pdf is negative",
+        "c": "When the slope of the principal axis of its pdf is 0",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "Correct! Negative slope means negative covariance.",
+        "b": "Correct!",
+        "c": "Incorrect! 0 slope means no correlation",
+        "d": "Incorrect! Covariance depends upon the slope of the principal axis (Hint : Refer to Isocontours section of Theory)."
+      },
+      "correctAnswer": "b",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "For any $x \\in \\mathbb{R}$, what is the relationship between $\\Phi(-x)$ and $\\Phi(x)$?",
+      "answers": {
+        "a": "$\\Phi(-x) = 1 - \\Phi(x)$",
+        "b": "$\\Phi(-x) = \\Phi(x)$",
+        "c": "$\\Phi(-x) = -\\Phi(x)$",
+        "d": "$\\Phi(-x) = \\frac{1}{\\Phi(x)}$"
+      },
+      "explanations": {
+        "a": "Correct! The CDF of a standard normal distribution has the symmetry property $\\Phi(-x) = 1 - \\Phi(x)$ due to the symmetry of the normal distribution.",
+        "b": "Incorrect! This would imply that the CDF is the same for positive and negative values, which is not true.",
+        "c": "Incorrect! The CDF cannot be negative.",
+        "d": "Incorrect! The relationship is not multiplicative or inverse in this way."
+      },
+      "correctAnswer": "a",
+      "difficulty": "Medium"
     }
+
   ]
 }
