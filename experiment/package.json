@@ -1,0 +1,15 @@
+{
+  "name": "experiment",
+  "version": "1.0.0",
+  "description": "## Quiz ### 1. Introduction This part of the experiment is specifically for assessment purposes. This allows for the creation of a quiz with multiple choice single answer questions.   These can be * Pretest - Pre requisite quizzes * Posttest - Testing the learning * Learning Unit Quizzes - Quizzes to test the section's learning. The format for the same is discussed below.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@virtual-labs/buildexp": "^2.0.0"
+  }
+}
