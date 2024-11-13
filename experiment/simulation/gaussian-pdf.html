@@ -59,23 +59,26 @@
 					<div class="v-collapsible is-size-5">Instructions</div>
 					<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
 						<ul style="list-style: disc;">
-							<b>Quick theory overview:</b>
+							<!-- <b>Quick theory overview:</b>
 							<li>
 								
-							</li>
+							</li> -->
 							<ul style="list-style: disc;">
 								<b>Procedure:</b>
 								<li>
-									
+									You are given a plot for a gaussian random variable with mean \(\mu\) and variance \(\sigma^2\).
 								</li>
 								<li>
-									
+									Use the slider for the mean and the variance to observe change in the gaussian distribution.
 								</li>
 								<li>
-									
+									Observe how the variance relates to the width (or spread) of the pdf and mean relates to the position of the peak.
 								</li>
 								<li>
-									
+									For 2-D Gaussian Random Variable, you have to input the mean vector as well as the covariance matrix.
+								</li>
+								<li>
+									Observe both the 3D plot of the pdf as well as the contour plot to visualize the Gaussian Random Variable properly.
 								</li>
 							</ul>
 					</div>
@@ -90,7 +93,7 @@
 			<div class="column is-11-desktop is-12-tablet is-12-mobile">
 				<div class="v-datalist-container components-list">
 					<br>
-					<p> Question
+					<p> Observe the distributions of 1D and 2D Gaussian Random Variables with change in Means and Variances (and Covariances).
 					</p>
 					<br>
 				</div>
@@ -150,68 +153,6 @@
 									<input class="input" type="number" id="covYY" value="1" step="0.1" min="0.1" placeholder="σy²">
 								</div>
 							</div>
-
-							<!-- <div class="parameters-container">
-								<div class="vector-input">
-									<div>Mean Vector:</div>
-									<span class="matrix-bracket">[</span>
-									<div class="vector-content">
-										<input type="number" id="meanX" class="numeric-input" value="0" step="0.1">
-										<input type="number" id="meanY" class="numeric-input" value="0" step="0.1">
-									</div>
-									<span class="matrix-bracket">]</span>
-								</div>
-							
-								<div class="matrix-input">
-									<div>Covariance Matrix:</div>
-									<div style="display: flex; align-items: center;">
-										<span class="matrix-bracket">[</span>
-										<div class="matrix-content">
-											<input type="number" id="covXX" class="numeric-input" value="1" step="0.1">
-											<input type="number" id="covXY" class="numeric-input" value="0" step="0.1">
-											<input type="number" id="covYX" class="numeric-input" value="0" step="0.1">
-											<input type="number" id="covYY" class="numeric-input" value="1" step="0.1">
-										</div>
-										<span class="matrix-bracket">]</span>
-									</div>
-								</div>
-							
-								<div class="button-container">
-									<button id="update2DButton" class="control-button update-button">Update Plots</button>
-									<button id="resetButton" class="control-button reset-button">Reset</button>
-								</div>
-							</div>
-
-							<div class="input-group">
-								<label class="input-label">Mean Vector:</label>
-								<div class="vector-container">
-									<span class="bracket">[</span>
-									<div class="vector-inputs">
-										<input type="number" id="meanX" value="0" step="any">
-										<input type="number" id="meanY" value="0" step="any">
-									</div>
-									<span class="bracket">]</span>
-								</div>
-							</div>
-							
-							<div class="input-group">
-								<label class="input-label">Covariance Matrix:</label>
-								<div class="matrix-container">
-									<span class="bracket">[</span>
-									<div class="matrix-inputs">
-										<input type="number" id="covXX" value="1" step="any">
-										<input type="number" id="covXY" value="0" step="any">
-										<input type="number" id="covYX" value="0" step="any">
-										<input type="number" id="covYY" value="1" step="any">
-									</div>
-									<span class="bracket">]</span>
-								</div>
-							</div>
-							
-							<div class="button-container">
-								<button class="reset-button" id="resetButton">Reset</button>
-								<button class="update-button" id="updateButton">Update Plot</button>
-							</div> -->
 							
 						</div>
 						<div class="has-text-centered">
