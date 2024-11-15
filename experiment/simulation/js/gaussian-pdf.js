@@ -1,3 +1,43 @@
+function checkAnswer() {
+    const mean = parseFloat(document.getElementById("meanSlider").value);
+    const variance = parseFloat(document.getElementById("varianceSlider").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const observations = document.getElementById("observations1");
+
+    // Clear previous observations
+    observations.innerHTML = "asdasd";
+
+    // Input validation for all fields
+    if (isNaN(mean) || isNaN(variance) || isNaN(height)) {
+        observations.innerHTML = "<p class='error'>Please enter only numerical values.</p>";
+        observations.style.color = "red";
+        return;
+    }
+
+    if (height <= 0) {
+        observations.innerHTML = "<p class='error'>Values must be positive numbers.</p>";
+        observations.style.color = "red";
+        return;
+    }
+
+    // Calculate the expected height (For simplicity, using a basic formula
+    const expectedHeight = 1/Math.sqrt(2*3.14156*variance);
+    const tolerance = 0.02; // 5% tolerance for error
+
+    // Check if the provided height is within the tolerance range
+    const isCorrect = Math.abs(height - expectedHeight) <= tolerance * expectedHeight;
+
+    if (isCorrect) {
+        observations.innerHTML = "<p class='correct'>Correct Answer!</p>";
+        observations.style.color = "green";
+    } else {
+        observations.innerHTML = "<p class='incorrect'>Incorrect Asnwer!</p>";
+        observations.style.color = "red";
+    }
+}
+
+
+
 function gaussianPDF(x, mean, variance) {
     const stdDev = Math.sqrt(variance);
     return (1 / (stdDev * Math.sqrt(2 * Math.PI))) * 
@@ -104,6 +144,13 @@ function update2DPlot() {
     const covYX = parseFloat(document.getElementById('covYX').value);
     const covYY = parseFloat(document.getElementById('covYY').value);
 
+    if (isNaN(meanX) || isNaN(meanY) || isNaN(covXX) || isNaN(covXY) || isNaN(covYX) || isNaN(covYY)) {
+        // Handle the error (for example, show a message in the observation div)
+        document.getElementById('observations1').innerHTML = "Please enter valid numerical values for all inputs.";
+        document.getElementById('observations1').style.color = "red";
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }    
     const covMatrix = [[covXX, covXY], [covYX, covYY]];
 
     const xRange = linspace(-10, 10, 100);
@@ -146,7 +193,7 @@ function update2DPlot() {
     const layout3D = {
         title: {
             text: '3D Gaussian PDF',
-            y: 0.95
+            y: 0.99
         },
         scene: {
             xaxis: {title: 'x', range: [-10, 10]},
@@ -171,7 +218,7 @@ function update2DPlot() {
     const layout2D = {
         title: {
             text: 'Contour Plot of Gaussian PDF',
-            y: 0.95
+            y: 0.99
         },
         xaxis: {
             title: 'x',
@@ -324,3 +371,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

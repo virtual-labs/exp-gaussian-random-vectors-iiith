@@ -142,5 +142,14 @@ function generateSamples(count) {
     gaussianChart.update();
 }
 
+// Function to generate samples using the value from the slider
+function generateSamplesFromSlider() {
+    const numberOfSamples = parseInt(sampleSlider.value);
+    document.getElementById("observations1").innerHTML = "<p>"+numberOfSamples+" samples generated</p>";
+    document.getElementById("observations1").style.color = "black";
+    generateSamples(numberOfSamples);
+}
+
+
 // Initialize the chart when the page loads
 document.addEventListener('DOMContentLoaded', initChart);

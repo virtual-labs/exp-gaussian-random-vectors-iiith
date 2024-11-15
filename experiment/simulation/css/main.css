@@ -125,3 +125,144 @@ select {
     border-radius: 0.2em;
     background-color: #f1f1f1;
   }
+
+
+/* CSS */
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+/* Style for the custom slider */
+.custom-slider {
+    -webkit-appearance: none; /* Remove default slider styles */
+    appearance: none;
+    width: 300px; /* Adjust width as needed */
+    height: 10px;
+    background: linear-gradient(to right, #4A90E2, #A0D9F6);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Track styles */
+.custom-slider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #A0D9F6, #4A90E2);
+    height: 10px;
+    border-radius: 10px;
+}
+
+/* Thumb styles for WebKit browsers */
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4A90E2;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    
+}
+
+/* Hover and active effects for the thumb */
+.custom-slider:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+/* Styles for Firefox */
+.custom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4A90E2;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.custom-slider::-moz-range-track {
+    background: linear-gradient(to right, #4A90E2, #A0D9F6);
+    height: 10px;
+    border-radius: 10px;
+}
+
+/* Hover effect for Firefox thumb */
+.custom-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Styles for Internet Explorer */
+.custom-slider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4A90E2;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-slider::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 10px;
+}
+
+.custom-slider::-ms-fill-lower {
+    background: #4A90E2;
+    border-radius: 10px;
+}
+
+.custom-slider::-ms-fill-upper {
+    background: #A0D9F6;
+    border-radius: 10px;
+}

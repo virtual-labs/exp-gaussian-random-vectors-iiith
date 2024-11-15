@@ -62,10 +62,10 @@
 							<li>
 								
 							</li> -->
-							<ul style="list-style: disc;">
+							<ul style="list-style: disc; margin-bottom: 20px;">
 								<b>Procedure:</b>
 								<li>
-									Given a standard Normal Distribution, click on the respective buttons to generate samples from this distribution.
+									Given a standard Normal Distribution, use the slider to generate samples from this distribution.
 								</li>
 								<li>
 									The samples generated are plotted on over the gaussian distribution.
@@ -103,14 +103,19 @@
 
 
 					<div class="container">
-						<div class="button-container">
+						<!-- <div class="button-container">
 							<button onclick="generateSamples(10)">10 Samples</button>
 							<button onclick="generateSamples(20)">20 Samples</button>
 							<button onclick="generateSamples(50)">50 Samples</button>
 							<button onclick="generateSamples(100)">100 Samples</button>
 							<button onclick="generateSamples(500)">500 Samples</button>
 							<button onclick="generateSamples(1000)">1000 Samples</button>
-						</div>
+						</div> -->
+						<label for="sampleSlider">Number of Samples:</label>
+						<input type="range" class="custom-slider" id="sampleSlider" min="10" max="1000" step="10" value="10">
+						<!-- <span id="sampleValue"></span> -->
+						<button class="button-3" onclick="generateSamplesFromSlider()">Generate Samples</button>
+					
 						<div class="stats" id="stats"></div>
 						<canvas id="gaussianChart"></canvas>
 					</div>
