@@ -81,6 +81,7 @@ function initChart() {
             }
         }
     });
+    generateSamplesFromSlider();
 }
 
 function generateSamples(count) {
@@ -153,3 +154,13 @@ function generateSamplesFromSlider() {
 
 // Initialize the chart when the page loads
 document.addEventListener('DOMContentLoaded', initChart);
+const slider = document.getElementById("sampleSlider");
+const valueLabel = document.getElementById("sampleValue");
+
+// Function to update the label with the current slider value
+const updateSliderValue = () => {
+    valueLabel.textContent = slider.value;
+};
+
+// Event listener for input event to update the value in real-time
+slider.addEventListener("input", updateSliderValue);
