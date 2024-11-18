@@ -16,7 +16,7 @@
         "d": "Correct!"
       },
       "correctAnswer": "d",
-      "difficulty": "Easy"
+      "difficulty": "beginner"
     },
     {
       "question": "A random variable $X$ follows a standard normal distribution and another random variable $Y$ is given as $Y = 3\\cdot X +2$. If we know $\\mu_X=0$ and $\\sigma_X=1$, then what are the mean ($\\mu_Y$) and standard-deviation ($\\sigma_Y$) of Y?",
@@ -33,7 +33,7 @@
         "d": "$\\mu_Y=a \\mu_X + b$ and $\\sigma_Y=|a| \\sigma_X$"
       },
       "correctAnswer": "c",
-      "difficulty": "Easy"
+      "difficulty": "beginner"
     },
     {
       "question": "Let $X \\sim N(0, I_2)$ be a two-dimensional standard normal random vector, where $I_2$ is the $2\\times2$ identity matrix. What is the distribution of $Y = AX$, where $A = \\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$?",
@@ -50,7 +50,7 @@
         "d": "Incorrect! The mean vector of $Y$ is still zero since $X$ is centered at zero."
       },
       "correctAnswer": "b",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     {
       "question": "Let $X \\sim N(\\mu_X, \\Sigma_X)$ be a Gaussian random vector in $\\mathbb{R}^3$, where $\\mu_X = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}$ and $\\Sigma_X = \\begin{bmatrix} 1 & 0.5 & 0 \\\\ 0.5 & 2 & 0.3 \\\\ 0 & 0.3 & 1 \\end{bmatrix}$. Find the marginal distribution of $X_1$ and $X_3$.",
@@ -67,7 +67,7 @@
         "d": "Incorrect! Check the submatrix corresponding to $X_1$ and $X_3$."
       },
       "correctAnswer": "a",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     {
       "question": "When does a bivariate Gaussian pdf has negative covariance?",
@@ -84,7 +84,7 @@
         "d": "Incorrect! Covariance depends upon the slope of the principal axis (Hint : Refer to Isocontours section of Theory)."
       },
       "correctAnswer": "b",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     {
       "question": "For any $x \\in \\mathbb{R}$, what is the relationship between $\\Phi(-x)$ and $\\Phi(x)$?",
@@ -101,7 +101,7 @@
         "d": "Incorrect! The relationship is not multiplicative or inverse in this way."
       },
       "correctAnswer": "a",
-      "difficulty": "Medium"
+      "difficulty": "intermediate"
     }
 
   ]

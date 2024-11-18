@@ -35,7 +35,7 @@
         "d": "Incorrect, variance does not add up properly."
       },
       "correctAnswer": "a",
-      "difficulty": "Medium"
+      "difficulty": "intermediate"
     },
     {
       "question": "Let $X \\sim N(\\mu_X, \\Sigma_X)$ be a bivariate Gaussian random vector, where $\\mu_X = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$ and $\\Sigma_X = \\begin{bmatrix} 1 & 0.5 \\\\ 0.5 & 2 \\end{bmatrix}$. Find the conditional distribution of $X_1$ given $X_2 = 1$.",
@@ -52,7 +52,7 @@
         "d": "Incorrect! Both the mean and variance are not correct."
       },
       "correctAnswer": "a",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     
     {
@@ -70,7 +70,7 @@
         "d": "Incorrect! The covariance value is higher."
       },
       "correctAnswer": "a",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     {
       "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$?",
@@ -87,7 +87,7 @@
         "d": "This corresponds to three standard deviations, not one."
       },
       "correctAnswer": "a",
-      "difficulty": "Easy"
+      "difficulty": "beginner"
     },
     {
       "question": "Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
@@ -104,7 +104,7 @@
         "d": "Incorrect! The values are not valid for a CDF."
       },
       "correctAnswer": "a",
-      "difficulty": "Easy"
+      "difficulty": "beginner"
     },
     {
       "question": "What is the value of the CDF of the standard normal distribution at $x = 0$?",
@@ -121,7 +121,7 @@
         "d": "Incorrect! The CDF cannot take negative values."
       },
       "correctAnswer": "a",
-      "difficulty": "Easy"
+      "difficulty": "beginner"
     }
     
 
