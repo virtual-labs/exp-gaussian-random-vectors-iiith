@@ -86,7 +86,7 @@ The CLT roughly states that the sum (or average) of a large number of independen
 A **bivariate normal distribution** describes two jointly normal random variables $X$ and $Y$ with the following parameters:
 - **Means**: $\mu_X$, $\mu_Y$
 - **Variances**: $\sigma_X^2$, $\sigma_Y^2$
-- **Covariance**: $\sigma_{XY} = E\left[(X-\mu_X)\cdot(\Y-\mu_Y)\right]$ 
+- **Covariance**: $\sigma_{XY} = E\left[(X-\mu_X)\cdot(Y-\mu_Y)\right]$ 
 
 We denote this as:
 
