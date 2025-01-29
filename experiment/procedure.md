@@ -1,6 +1,6 @@
 # Procedure for the experiments in the following section
 
-In the experiment section there are 3 sub experiment which enhance the students understanding of Gaussian Random Vectors and their properties. 
+In the experiments section there are 3 sub-experiments which enhance the students understanding of Gaussian Random Vectors and their properties. 
 
 ## Sub Experiment _(1D and 2D Gaussian Visualization)_ :
 
@@ -20,7 +20,7 @@ In this subexperiment, there are 2 parts, one for 1D Gaussian Random Variable an
 - Any errors in input fields or values are displayed in the observation section.
 
 ## Sub Experiment _(Standard Normal Realizations)_ :
-This sub experiment helps users to build their understanding of the Standard Normal Distribution and how most of the Random values generated lie around the mean, withn $-2\sigma$ to $2\sigma$ interval on theb x-axis. 
+This sub experiment helps users to build their understanding of the Standard Normal Distribution and how most of the Random values generated lie around the mean, within $-2\sigma$ to $2\sigma$ interval on the x-axis. 
 - The user is given a plot of the 1D-Standard Normal Distribution (Gaussian pdf mean 0 and variance 1), and two lines signifying the $-2\sigma$ and $2\sigma$ boundaries. 
 
 - A slider allows the user to control the number of samples to be generated and plotted on the graph. The user can plot the samples using the *Generate Samples* button. 
