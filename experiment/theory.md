@@ -37,7 +37,7 @@ The CDF of a standard normal variable is denoted by $\Phi(x)$, which is the prob
 
 $$
 \begin{equation}
-P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right) \quad \text{where} \quad \Phi(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\inf}^{x} e^{\frac{-t^2}{2}}\cdot dt
+P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right) \quad \text{where} \quad \Phi(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{x} e^{\frac{-t^2}{2}}\cdot dt
 \end{equation}
 $$
 
@@ -56,7 +56,7 @@ Here are some properties of the $\Phi$ function that can be shown from its defin
 $\mu -n \sigma$ and $\mu + n \sigma$ is given by
 $$
 \begin{equation}
-F(\mu+n \sigma)-F(\mu-n \sigma)=\Phi(n)-\Phi(-n)=\operatorname{erf}\left(\frac{n}{\sqrt{2}}\right)
+F(\mu+n \sigma)-F(\mu-n \sigma)=\Phi(n)-\Phi(-n)=2 \Phi(n)-1
 \end{equation}
 $$
 
@@ -75,7 +75,7 @@ $$
 
 
 ### Central Limit Theorem (CLT)
-The CLT states that the sum (or average) of a large number of independent and identically distributed (i.i.d.) random variables tends to be normally distributed, even if the original variables are not normal.
+The CLT roughly states that the sum (or average) of a large number of independent and identically distributed (i.i.d.) random variables tends to be normally distributed, even if the original variables are not normal. We will discuss about CLT in detail in [CLT Experiment](https://virtual-labs.github.io/exp-central-limit-theorem-iiith/)
 
 
 
