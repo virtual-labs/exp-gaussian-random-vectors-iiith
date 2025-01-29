@@ -87,20 +87,20 @@
       "difficulty": "advanced"
     },
     {
-      "question": "For any $x \\in \\mathbb{R}$, what is the relationship between $\\Phi(-x)$ and $\\Phi(x)$?",
+      "question": "Under what conditions does the contours of a bivariate Gaussian distribution become concentric-circles?",
       "answers": {
-        "a": "$\\Phi(-x) = 1 - \\Phi(x)$",
-        "b": "$\\Phi(-x) = \\Phi(x)$",
-        "c": "$\\Phi(-x) = -\\Phi(x)$",
-        "d": "$\\Phi(-x) = \\frac{1}{\\Phi(x)}$"
+        "a": "When the cov(X,Y) is same as cov(Y,X)",
+        "b": "When the var(X) and var(Y) are same",
+        "c": "When var(X) = 0",
+        "d": "When cov(X,Y) = cov(Y,X) = 0"
       },
       "explanations": {
-        "a": "Correct! The CDF of a standard normal distribution has the symmetry property $\\Phi(-x) = 1 - \\Phi(x)$ due to the symmetry of the normal distribution.",
-        "b": "Incorrect! This would imply that the CDF is the same for positive and negative values, which is not true.",
-        "c": "Incorrect! The CDF cannot be negative.",
-        "d": "Incorrect! The relationship is not multiplicative or inverse in this way."
+        "a": "Inorrect! both covariences are always same",
+        "b": "Correct!",
+        "c": "Incorrect!",
+        "d": "Incorrect!"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "intermediate"
     }
 
