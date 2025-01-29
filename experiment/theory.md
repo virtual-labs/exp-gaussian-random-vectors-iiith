@@ -33,11 +33,11 @@ $$
    - If $X \sim N(\mu, \sigma^2)$, and we transform $Y = aX + b$, then $Y \sim N(a\mu + b, a^2\sigma^2)$.
   
 ### Cumulative Distribution Function (CDF)
-The CDF of a normal variable is denoted by $\Phi(x)$, which is the probability that $X \leq x$:
+The CDF of a standard normal variable is denoted by $\Phi(x)$, which is the probability that $X \leq x$:
 
 $$
 \begin{equation}
-P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right)
+P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right) \quad \text{where} \quad \Phi(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\inf}^{x} e^{\frac{-t^2}{2}}\cdot dt
 \end{equation}
 $$
 
