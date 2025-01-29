@@ -73,7 +73,7 @@
       "difficulty": "advanced"
     },
     {
-      "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$?",
+      "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$? (Refer to the CDF table for standard normal distribution)",
       "answers": {
         "a": "$0.68$",
         "b": "$0.95$",
