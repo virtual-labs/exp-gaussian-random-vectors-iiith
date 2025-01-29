@@ -4,14 +4,14 @@ In the experiment section there are 3 sub experiment which enhance the students 
 
 ## Sub Experiment _(1D and 2D Gaussian Visualization)_ :
 
-In this subexperiment, there are 2 parts, one for 1D Gaussian Random Variable and the other for Bi-variate Gaussiang Random vector. The subexperiments aims to help visualize the nature of the Probability Density Function (PDF) of bothe 1D and 2D gaussian random variables and how the parameters affect the nature of the curve. 
+In this subexperiment, there are 2 parts, one for 1D Gaussian Random Variable and the other for Bi-variate Gaussiang Random vector. The subexperiments aim to help visualize the nature of the Probability Density Function (PDF) of both 1D and 2D gaussian random variables and how the parameters affect the nature of the curve. 
 
 
 - The first part presents the user with sliders for *mean* and *variance* for 1D Gaussian Random Variable and observe how the nature of the PDF changes in real-time. 
 
 - The user is also given an input field for the height of the gaussian, which can be calculated by obtaining the value of the PDF at x=0. An error margin of 5% is allowed in the answer. 
 
-- The result of the calue entered is displayed in the Observation section.
+- The result of the experiment entered is displayed in the Observation section.
 
 - Similar to the first part, the 2nd part takes input the mean vector (consisting of 2 values) and the corelation matrix (2x2 symmetric matrix consisting of 4 values). Based on the values entered, 2D gaussian is visualized in both 2D and contour plots. 
 
