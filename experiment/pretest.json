@@ -3,7 +3,7 @@
   "questions": [
     
     {
-      "question": " In Standard normal distribution, the value of mode is ___________?",
+      "question": "The median of a distribution is the value of the random variable that separates the higher and lower halves of a distribution. In Standard normal distribution, the value of median is ___________?",
       "answers": {
         "a": "2",
         "b": "1",
