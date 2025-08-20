@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <title>Experiment 1: 1D Gaussian PDF</title>
+</head>
+<body>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-one-quarter">
+                <h2 class="tasks-heading">Experiments</h2>
+            </div>
+            <div class="column">
+                <div class="v-tabs">
+                    <ul>
+                        <li class="is-active"><a>Experiment 1: 1D Gaussian PDF</a></li>
+                        <li onclick="window.location.href = 'gaussian-2d-pdf.html';"><a>Experiment 2: 2D Gaussian PDF</a></li>
+                        <li onclick="window.location.href = 'gaussian-realization.html';"><a>Experiment 3: Generate Realizations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-collapsible-instruction-container v-instruction-container">
+                    <div class="v-collapsible is-size-5">Instructions</div>
+                    <div class="v-content">
+                        <p><strong>Theory:</strong> The one-dimensional Gaussian (or Normal) distribution is a fundamental continuous probability distribution. It is defined by two parameters: the mean (μ), which represents the central location, and the variance (σ²), which measures the spread or dispersion of the data. The probability density function (PDF) is given by the formula:</p>
+                        <p style="text-align:center;">\(f(x | \mu, \sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} e^{ - \frac{ (x - \mu)^2 }{ 2\sigma^2 } }\)</p>
+                        <p><strong>Procedure:</strong></p>
+                        <ol>
+                            <li>Use the "Mean (μ)" slider to shift the distribution left or right.</li>
+                            <li>Use the "Variance (σ²)" slider to change the spread of the distribution.</li>
+                            <li>Based on the current variance, calculate the peak height of the PDF using the formula (when x=μ).</li>
+                            <li>Enter your calculated value in the "Calculate the Height" box and click "Check Answer" to verify.</li>
+                        </ol>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                            <li>Observe how the mean (μ) corresponds to the x-coordinate of the peak.</li>
+                            <li>Understand that a smaller variance (σ²) leads to a taller, narrower peak, indicating higher certainty.</li>
+                            <li>Understand that a larger variance (σ²) leads to a shorter, wider peak, indicating greater uncertainty.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2%;">
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="white-boxed-panel">
+                    <h3 class="title is-5" style="text-align: center;">1D Gaussian Distribution</h3>
+                    <div class="field">
+                        <label class="label" for="meanSlider">Mean (μ): <span class="value-display" id="meanValue">0</span></label>
+                        <input class="slider" type="range" id="meanSlider" min="-5" max="5" step="0.1" value="0">
+                    </div>
+                    <div class="field">
+                        <label class="label" for="varianceSlider">Variance (σ²): <span class="value-display" id="varianceValue">1</span></label>
+                        <input class="slider" type="range" id="varianceSlider" min="0.1" max="5" step="0.1" value="1">
+                    </div>
+                    <div class="field has-text-centered">
+                        <label class="label" for="height">Calculate the Height of the PDF:</label>
+                        <input class="input" style="max-width: 200px; display: inline-block;" type="text" id="height" name="height">
+                        <button class="button is-primary" type="button" onclick="checkAnswer()">Check Answer</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="gaussianChart1D"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4-desktop is-12-tablet">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations">
+                        <p class="info">Adjust the sliders to see how the parameters affect the Gaussian distribution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script src="./js/gaussian-1d-pdf.js"></script>
+</body>
+</html>

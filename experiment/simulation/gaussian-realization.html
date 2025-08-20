@@ -1,147 +1,80 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
-	<link rel="stylesheet" href="./css/gaussian-pdf.css">
-	<link rel="stylesheet" href="./css/main.css">
-	<script type="text/javascript" id="MathJax-script" async
-		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.10.0/plotly.min.js"></script>
-	<title>
-		Gaussian Random Vectors
-	</title>
+    <title>Experiment 3: Gaussian RV Realizations</title>
 </head>
-
 <body>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-one-quarter">
+                <h2 class="tasks-heading">Experiments</h2>
+            </div>
+            <div class="column">
+                <div class="v-tabs">
+                    <ul>
+                        <li onclick="window.location.href = 'gaussian-1d-pdf.html';"><a>Experiment 1: 1D Gaussian PDF</a></li>
+                        <li onclick="window.location.href = 'gaussian-2d-pdf.html';"><a>Experiment 2: 2D Gaussian PDF</a></li>
+                        <li class="is-active"><a>Experiment 3: Generate Realizations</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-	<div class="container">
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-collapsible-instruction-container v-instruction-container">
+                    <div class="v-collapsible is-size-5">Instructions</div>
+                    <div class="v-content">
+                        <p><strong>Theory:</strong> A key property of the Gaussian distribution is the percentage of data that falls within a certain number of standard deviations (σ) from the mean. For a standard normal distribution (μ=0, σ=1), approximately 95.45% of all values lie within the interval [-2σ, +2σ]. This is part of the 68-95-99.7 rule.</p>
+                        <p><strong>Procedure:</strong></p>
+                        <ol>
+                            <li>This experiment simulates drawing random samples from a standard Normal Distribution.</li>
+                            <li>Use the slider to select the number of samples to generate and click the button.</li>
+                            <li>The generated samples are plotted as vertical lines. Lines in green fall within the [-2σ, +2σ] range; lines in red fall outside.</li>
+                            <li>The statistics below the slider show the actual percentage of samples that fell within the range for your current run.</li>
+                        </ol>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                            <li>Observe that for a small number of samples, the measured percentage can be far from the theoretical 95.45%.</li>
+                            <li>See how, as you increase the number of samples, the measured percentage consistently gets closer to 95.45%. This is a demonstration of the Law of Large Numbers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="columns is-centered" style="margin-top: 2%;">
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="white-boxed-panel">
+                    <div class="field">
+                        <label class="label" for="sampleSlider">Number of Samples: <span class="value-display" id="sampleValue">10</span></label>
+                        <input type="range" class="slider" id="sampleSlider" min="10" max="1000" step="10" value="10">
+                    </div>
+                    <div class="has-text-centered">
+                         <button class="button is-primary" onclick="generateSamplesFromSlider()">Generate Samples</button>
+                    </div>
+                    <div id="stats" style="text-align:center; font-weight: bold; margin-top: 1rem;"></div>
+                    <div class="chart-wrapper">
+                        <canvas id="gaussianChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4-desktop is-12-tablet">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<div class="columns is-centered">
-			<div class="columns is-centered">
-				<div class="column is-one-quarter v-instruction-title">
-					Tasks
-				</div>
-				<div class="column">
-					<div class="v-tabs">
-						<ul>
-							<li id="Task1" onclick="window.location.href = 'gaussian-pdf.html';">
-								<a>
-									Probability Density Functions of 1D and 2D Gaussian RVs
-								</a>
-							</li>
-
-							<li id="Task2" onclick="window.location.href = 'gaussian-realization.html';" class="is-active">
-								<a>
-									Generate Gaussian (0, σ²) RV Realizations
-								</a>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="columns is-centered">
-
-			<div class="column">
-				<div class="v-collapsible-instruction-container v-instruction-container">
-					<div class="v-collapsible is-size-5">Instructions</div>
-					<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-						<ul style="list-style: disc;">
-							<!-- <b>Quick theory overview:</b>
-							<li>
-								
-							</li> -->
-							<ul style="list-style: disc; margin-bottom: 20px;">
-								<b>Procedure:</b>
-								<li>
-									Given a standard Normal Distribution, use the slider to generate samples from this distribution.
-								</li>
-								<li>
-									The samples generated are plotted on over the gaussian distribution.
-								</li>
-								<li>
-									The fraction of samples lying inside the \(-2 \sigma\) to \(2 \sigma \) interval is also displayed.
-								</li>
-								<li>
-									Notice as the number of samples increase, approximately 95.4% of the samples lie inside this interval.
-								</li>
-							</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<br>
-
-	<section id="page1">
-		<div class="columns is-centered">
-			<div class="column is-11-desktop is-12-tablet is-12-mobile">
-				<div class="v-datalist-container components-list">
-					<br>
-					<p> Given standard Normal distribution, observe how the majority of the distribution lies in the \(-2 \sigma\) to \(2 \sigma \) interval
-					</p>
-					<br>
-				</div>
-			</div>
-		</div>
-
-		<div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start"
-			style="margin-top: 2%;">
-			<div class="column is-8-desktop is-12-tablet is-12-mobile">
-				<div class="box-question">
-
-
-					<div class="container">
-						<!-- <div class="button-container">
-							<button onclick="generateSamples(10)">10 Samples</button>
-							<button onclick="generateSamples(20)">20 Samples</button>
-							<button onclick="generateSamples(50)">50 Samples</button>
-							<button onclick="generateSamples(100)">100 Samples</button>
-							<button onclick="generateSamples(500)">500 Samples</button>
-							<button onclick="generateSamples(1000)">1000 Samples</button>
-						</div> -->
-						<label for="sampleSlider">Number of Samples:</label>
-						<input type="range" class="slider" id="sampleSlider" min="10" max="1000" step="10" value="10">
-						<span id="sampleValue">10</span>
-						<button class="button-3" onclick="generateSamplesFromSlider()">Generate Samples</button>
-					
-						<div class="stats" id="stats"></div>
-						<canvas id="gaussianChart"></canvas>
-					</div>
-
-
-				</div>
-			</div>
-			<div class="column is-3-desktop is-4-tablet is-12-mobile">
-				<div class="v-datalist-container components-list canvas-container">
-					<div class="v-datalist-title">Observations</div>
-					<div>
-						<div id="observations1"></div>
-						<div id="results1"></div>
-						<div class="canvas-container">
-							<canvas id="canvas1"></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-	<script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
-	<script src="./js/gaussian-realization.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script src="./js/gaussian-realization.js"></script>
 </body>
-
-
 </html>
