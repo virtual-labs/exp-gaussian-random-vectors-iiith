@@ -1,30 +1,38 @@
-# Procedure for the experiments in the following section
+## Procedure for the Experiments
 
-In the experiments section there are 3 sub-experiments which enhance the students understanding of Gaussian Random Vectors and their properties. 
+This section contains three sub-experiments designed to enhance the student's understanding of Gaussian Random Variables/Vectors and their properties.
 
-## Sub Experiment _(1D and 2D Gaussian Visualization)_ :
+### Experiment 1: 1D Gaussian PDF Visualization
 
-In this subexperiment, there are 2 parts, one for 1D Gaussian Random Variable and the other for Bi-variate Gaussiang Random vector. The subexperiments aim to help visualize the nature of the Probability Density Function (PDF) of both 1D and 2D gaussian random variables and how the parameters affect the nature of the curve. 
+This experiment helps visualize the Probability Density Function (PDF) of a one-dimensional Gaussian random variable and demonstrates how its parameters affect the shape of the curve.
 
+- **Procedure:**
+    1.  The user is presented with a plot of the 1D Gaussian PDF.
+    2.  Use the **"Mean (μ)"** slider to shift the distribution's center along the x-axis.
+    3.  Use the **"Variance (σ²)"** slider to control the spread of the distribution. Observe how the PDF becomes narrower and taller for smaller variances, and wider and shorter for larger variances.
+    4.  The user is also given an input field to calculate the height of the Gaussian peak. This value corresponds to the PDF's value at x=μ.
+    5.  After entering the calculated height, click **"Check Answer"**. The answer is considered correct if it falls within a 1% tolerance of the true value.
+    6.  Feedback on the answer and real-time observations about the curve's parameters are displayed in the **"Observations"** section.
 
-- The first part presents the user with sliders for *mean* and *variance* for 1D Gaussian Random Variable and observe how the nature of the PDF changes in real-time. 
+### Experiment 2: 2D Gaussian PDF Visualization
 
-- The user is also given an input field for the height of the gaussian, which can be calculated by obtaining the value of the PDF at x=0. An error margin of 5% is allowed in the answer. 
+This experiment extends the visualization to a bi-variate (2D) Gaussian random vector, showing how the mean vector and covariance matrix define its form in 3D space.
 
-- The result of the experiment entered is displayed in the Observation section.
+- **Procedure:**
+    1.  Input the desired center of the distribution into the two fields of the **"Mean Vector"**.
+    2.  Input the four values for the 2x2 **"Covariance Matrix"**. Note that this matrix must be symmetric and positive-definite for a valid PDF.
+    3.  Click the **"Update 2D Gaussian"** button to render the distribution.
+    4.  Two plots are generated: a 3D surface plot and a 2D contour plot. The user can click and drag to rotate the 3D plot and use the scroll wheel to zoom.
+    5.  Observe how changing the mean vector repositions the entire distribution, while adjusting the covariance matrix values changes its shape, spread, and orientation.
+    6.  Any input errors or parameter observations will be displayed in the **"Observations"** section.
 
-- Similar to the first part, the 2nd part takes input the mean vector (consisting of 2 values) and the corelation matrix (2x2 symmetric matrix consisting of 4 values). Based on the values entered, 2D gaussian is visualized in both 2D and contour plots. 
+### Experiment 3: Generate Realizations of a Standard Normal RV
 
-- The user can zoom in/out and move around the 2D Gaussian Plots and observe how changeing the mean vector affects the position of the pdf and the covariance matrix affects the shape of the pdf.
+This experiment demonstrates a key property of the Standard Normal Distribution (μ=0, σ²=1) and the Law of Large Numbers. It shows that a vast majority of random samples will lie close to the mean.
 
-- Any errors in input fields or values are displayed in the observation section.
-
-## Sub Experiment _(Standard Normal Realizations)_ :
-This sub experiment helps users to build their understanding of the Standard Normal Distribution and how most of the Random values generated lie around the mean, within $-2\sigma$ to $2\sigma$ interval on the x-axis. 
-- The user is given a plot of the 1D-Standard Normal Distribution (Gaussian pdf mean 0 and variance 1), and two lines signifying the $-2\sigma$ and $2\sigma$ boundaries. 
-
-- A slider allows the user to control the number of samples to be generated and plotted on the graph. The user can plot the samples using the *Generate Samples* button. 
-
-- Ideally, the percentage of samples lying in the $-2\sigma$ to $2\sigma$ range should converge to 95.4%. 
-
-- As the number of samples increase, the approximation of fraction of samples lying in the $-2\sigma$ to $2\sigma$ range becomes more accurate.
+- **Procedure:**
+    1.  The user is shown a plot of the Standard Normal PDF with vertical lines indicating the **-2σ** and **+2σ** boundaries.
+    2.  Use the slider to select the desired **"Number of Samples"** to generate, from 10 to 1000.
+    3.  Click the **"Generate Samples"** button. The generated random samples are drawn as vertical lines on the plot.
+    4.  The application calculates the actual percentage of samples that fall within the -2σ to +2σ range and displays this statistic.
+    5.  Theoretically, this percentage should converge to **95.45%**. Observe how this approximation becomes more accurate as you increase the number of generated samples.

@@ -14,18 +14,24 @@
 <body>
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-one-quarter">
-                <h2 class="tasks-heading">Experiments</h2>
+            <div class="column is-full">
+                <h2 class="tasks-heading">Tasks</h2>
             </div>
+        </div>
+        <div class="columns is-centered">
             <div class="column">
                 <div class="v-tabs">
                     <ul>
-                        <li class="is-active"><a>Experiment 1: 1D Gaussian PDF</a></li>
-                        <li onclick="window.location.href = 'gaussian-2d-pdf.html';"><a>Experiment 2: 2D Gaussian PDF</a></li>
-                        <li onclick="window.location.href = 'gaussian-realization.html';"><a>Experiment 3: Generate Realizations</a></li>
+                        <li class="is-active"><a>Sub Experiment - 1</a></li>
+                        <li onclick="window.location.href = 'gaussian-2d-pdf.html';"><a>Sub Experiment - 2</a></li>
+                        <li onclick="window.location.href = 'gaussian-realization.html';"><a>Sub Experiment - 3</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div class="subheading-box">
+            <h3 class="title">1D Gaussian PDF</h3>
         </div>
 
         <div class="columns is-centered">
@@ -41,6 +47,7 @@
                             <li>Use the "Variance (σ²)" slider to change the spread of the distribution.</li>
                             <li>Based on the current variance, calculate the peak height of the PDF using the formula (when x=μ).</li>
                             <li>Enter your calculated value in the "Calculate the Height" box and click "Check Answer" to verify.</li>
+                            <li>The value must be within +/- 0.01 of the correct answer.</li>
                         </ol>
                         <p><strong>Goals:</strong></p>
                         <ul>

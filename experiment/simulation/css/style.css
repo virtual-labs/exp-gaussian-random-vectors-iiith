@@ -29,6 +29,7 @@ body {
    ---------------------------------------- */
 .v-tabs ul {
     display: flex;
+    justify-content: left; /* This line is added to center the tabs */
     overflow-x: auto;
     white-space: nowrap;
     list-style: none;

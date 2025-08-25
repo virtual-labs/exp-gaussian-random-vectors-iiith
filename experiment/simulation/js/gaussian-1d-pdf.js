@@ -3,25 +3,35 @@ function checkAnswer() {
     const heightInput = parseFloat(document.getElementById("height").value);
     const observations = document.getElementById("observations");
 
+    // Basic input validation
     if (isNaN(variance) || isNaN(heightInput)) {
         observations.innerHTML = "<p class='incorrect'>Please enter a valid number for the height.</p>";
         return;
     }
-
     if (heightInput <= 0) {
         observations.innerHTML = "<p class='incorrect'>Height must be a positive number.</p>";
         return;
     }
 
+    // Calculate the theoretical height
     const expectedHeight = 1 / Math.sqrt(2 * Math.PI * variance);
-    const tolerance = 0.1; // Increased tolerance as requested
 
-    if (Math.abs(heightInput - expectedHeight) <= tolerance) {
-        observations.innerHTML = `<p class='correct'>Correct! The calculated height is approximately ${expectedHeight.toFixed(3)}.</p>`;
+    // Truncate the theoretical height to 2 decimal places for comparison
+    const truncatedHeight = Math.floor(expectedHeight * 100) / 100;
+
+    // Calculate the 1% tolerance based on the truncated value
+    const tolerance = 0.01;
+    const lowerBound = truncatedHeight - tolerance;
+    const upperBound = truncatedHeight + tolerance;
+
+    // Check if the user's input falls within the tolerance range
+    if (heightInput >= lowerBound && heightInput <= upperBound) {
+        observations.innerHTML = `<p class='correct'>Correct! The expected height is ${truncatedHeight.toFixed(2)}, and your answer is within the acceptable +/- 0.01 tolerance range.</p>`;
     } else {
-        observations.innerHTML = `<p class='incorrect'>Not quite. The correct height is ${expectedHeight.toFixed(3)}. Remember the formula for the peak of a Gaussian PDF is 1 / (σ * sqrt(2π)).</p>`;
+        observations.innerHTML = `<p class='incorrect'>Not quite. The correct height is ${truncatedHeight.toFixed(2)}. Your answer should be within +/- 0.01 of this value (between ${lowerBound.toFixed(3)} and ${upperBound.toFixed(3)}).</p>`;
     }
 }
+
 
 function gaussianPDF(x, mean, variance) {
     const stdDev = Math.sqrt(variance);
@@ -91,7 +101,10 @@ function update1DObservations(mean, variance) {
         obsText += "<li>The <strong>variance (σ²)</strong> of " + variance.toFixed(1) + " controls the spread of the distribution. Try increasing it to see the curve flatten and widen, and decreasing it to see it become sharper and narrower.</li>";
     }
     obsText += "</ul>";
-    observations.innerHTML = obsText;
+    // This function will not overwrite the feedback from checkAnswer
+    if (!observations.innerHTML.includes('Correct!')) {
+        observations.innerHTML = obsText;
+    }
 }
 
 
