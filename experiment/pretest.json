@@ -3,7 +3,7 @@
   "questions": [
     
     {
-      "question": " In Standard normal distribution, the value of mode is ___________?",
+      "question": "The median of a distribution is the value of the random variable that separates the higher and lower halves of a distribution. In Standard normal distribution, the value of median is ___________?",
       "answers": {
         "a": "2",
         "b": "1",
@@ -73,7 +73,7 @@
       "difficulty": "advanced"
     },
     {
-      "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$?",
+      "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$? (Refer to the CDF table for standard normal distribution)",
       "answers": {
         "a": "$0.68$",
         "b": "$0.95$",

@@ -33,11 +33,11 @@ $$
    - If $X \sim N(\mu, \sigma^2)$, and we transform $Y = aX + b$, then $Y \sim N(a\mu + b, a^2\sigma^2)$.
   
 ### Cumulative Distribution Function (CDF)
-The CDF of a normal variable is denoted by $\Phi(x)$, which is the probability that $X \leq x$:
+The CDF of a standard normal variable is denoted by $\Phi(x)$, which is the probability that $X \leq x$:
 
 $$
 \begin{equation}
-P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right)
+P(X \leq x) = \Phi\left( \frac{x - \mu}{\sigma} \right) \quad \text{where} \quad \Phi(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{x} e^{\frac{-t^2}{2}}\cdot dt
 \end{equation}
 $$
 
@@ -56,7 +56,7 @@ Here are some properties of the $\Phi$ function that can be shown from its defin
 $\mu -n \sigma$ and $\mu + n \sigma$ is given by
 $$
 \begin{equation}
-F(\mu+n \sigma)-F(\mu-n \sigma)=\Phi(n)-\Phi(-n)=\operatorname{erf}\left(\frac{n}{\sqrt{2}}\right)
+F(\mu+n \sigma)-F(\mu-n \sigma)=\Phi(n)-\Phi(-n)=2 \Phi(n)-1
 \end{equation}
 $$
 
@@ -75,7 +75,7 @@ $$
 
 
 ### Central Limit Theorem (CLT)
-The CLT states that the sum (or average) of a large number of independent and identically distributed (i.i.d.) random variables tends to be normally distributed, even if the original variables are not normal.
+The CLT roughly states that the sum (or average) of a large number of independent and identically distributed (i.i.d.) random variables tends to be normally distributed, even if the original variables are not normal. We will discuss about CLT in detail in [CLT Experiment](https://virtual-labs.github.io/exp-central-limit-theorem-iiith/)
 
 
 
@@ -86,7 +86,7 @@ The CLT states that the sum (or average) of a large number of independent and id
 A **bivariate normal distribution** describes two jointly normal random variables $X$ and $Y$ with the following parameters:
 - **Means**: $\mu_X$, $\mu_Y$
 - **Variances**: $\sigma_X^2$, $\sigma_Y^2$
-- **Covariance**: $\sigma_{XY}$ (or equivalently, the correlation $\rho$)
+- **Covariance**: $\sigma_{XY} = E\left[(X-\mu_X)\cdot(Y-\mu_Y)\right]$ 
 
 We denote this as:
 
