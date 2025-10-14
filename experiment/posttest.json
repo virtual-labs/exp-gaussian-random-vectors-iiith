@@ -78,10 +78,10 @@
         "d": "None of the above"
       },
       "explanations": {
-        "a": "Correct! Negative slope means negative covariance.",
+        "a": "Incorrect! Negative slope means negative covariance.",
         "b": "Correct!",
         "c": "Incorrect! zero slope means no correlation",
-        "d": "Incorrect! Covariance depends upon the slope of the principal axis (Hint : Refer to Isocontours section of Theory)."
+        "d": "Incorrect! Covariance depends upon the slope of the principal axis (Hint : Refer to Contours section of Theory)."
       },
       "correctAnswer": "b",
       "difficulty": "advanced"

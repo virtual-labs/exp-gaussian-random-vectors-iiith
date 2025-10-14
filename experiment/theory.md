@@ -1,6 +1,6 @@
 ## Introduction
 
-A **Gaussian random variable** (or **Normal random variable**) is a continuous random variable with a bell-shaped probability distribution. It is one of the most widely used distributions in probability and statistics due to the **Central Limit Theorem**, which states that the sum of many independent random variables tends to follow a normal distribution, regardless of the original distributions of the variables. Therefore, a simple Gaussian assumption for a naturally occuring distribution often tends to provide accurate analysis of the system. We define and study both 1-d and 2-d Gaussian Random Variables in this experiment.
+A *Gaussian random variable* (or *Normal random variable) is a continuous random variable with a bell-shaped probability distribution. It is one of the most widely used distributions in probability and statistics due to the **Central Limit Theorem*, which states that the sum of many independent random variables tends to follow a normal distribution, regardless of the original distributions of the variables. Therefore, a simple Gaussian assumption for a naturally occuring distribution often tends to provide accurate analysis of the system. We define and study both 1-d and 2-d Gaussian Random Variables in this experiment.
 
 ## 1D (Univariate) Gaussian Random Variable
 
@@ -8,8 +8,8 @@ A **Gaussian random variable** (or **Normal random variable**) is a continuous r
 
 A 1D Gaussian random variable $X$ denoted as $X \sim N(\mu, \sigma^2)$, is characterized by two parameters:
 
-- **Mean** $\mu$ (center of the distribution)
-- **Variance** $\sigma^2$ (spread of the distribution)
+- *Mean* $\mu$ (center of the distribution)
+- *Variance* $\sigma^2$ (spread of the distribution)
 
 <p align="center">
   <img src="./images/gaussian1d.png" />
@@ -24,8 +24,8 @@ $$
 
 ### Properties
 
-1. **Symmetry**: The normal distribution is symmetric around its mean $\mu$.
-2. **Standard Normal Distribution**: When $\mu = 0$ and $\sigma^2 = 1$, the Gaussian random variable is called a **standard normal variable**, denoted by $Z \sim N(0, 1)$. Its PDF is:
+1. *Symmetry*: The normal distribution is symmetric around its mean $\mu$.
+2. *Standard Normal Distribution: When $\mu = 0$ and $\sigma^2 = 1$, the Gaussian random variable is called a **standard normal variable*, denoted by $Z \sim N(0, 1)$. Its PDF is:
 
 $$
 \begin{equation}
@@ -33,7 +33,7 @@ f_Z(z) = \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{z^2}{2} \right)
 \end{equation}
 $$
 
-4. **Transformation of a Gaussian Random Variable**:
+4. *Transformation of a Gaussian Random Variable*:
    - If $X \sim N(\mu, \sigma^2)$, and we transform $Y = aX + b$, then $Y \sim N(a\mu + b, a^2\sigma^2)$.
 
 ### Cumulative Distribution Function (CDF)
@@ -90,11 +90,11 @@ The CLT roughly states that the sum (or average) of a large number of independen
 
 ### Definition
 
-A **bivariate normal distribution** describes two jointly normal random variables $X$ and $Y$ with the following parameters:
+A *bivariate normal distribution* describes two jointly normal random variables $X$ and $Y$ with the following parameters:
 
-- **Means**: $\mu_X$, $\mu_Y$
-- **Variances**: $\sigma_X^2$, $\sigma_Y^2$
-- **Covariance**: $\sigma_{XY} = E\left[(X-\mu_X)\cdot(Y-\mu_Y)\right]$
+- *Means*: $\mu_X$, $\mu_Y$
+- *Variances*: $\sigma_X^2$, $\sigma_Y^2$
+- *Covariance*: $\sigma_{XY} = E\left[(X-\mu_X)\cdot(Y-\mu_Y)\right]$
 
 We denote this as:
 
@@ -128,15 +128,15 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
 
 ### Key Properties of the Bivariate Normal Distribution
 
-1. **Marginal Distributions**:
+1. *Marginal Distributions*:
 
    - The marginal distribution of $X$ is $X \sim N(\mu_X, \sigma_X^2)$.
    - The marginal distribution of $Y$ is $Y \sim N(\mu_Y, \sigma_Y^2)$.
    - This means that each random variable $X$ and $Y$ follows a normal distribution independently, but their joint behavior is governed by the covariance or correlation.
-2. **Independence**:
+2. *Independence*:
 
    - If $\rho = 0$, then $X$ and $Y$ are independent. In other words, zero correlation implies independence for jointly normal random variables.
-   - **Example**:
+   - *Example*:
 
      - Let $X$ and $Y$ be independent random variables with means $0$ and standard deviations $1$. This means $\rho = 0$. Then the joint PDF simplifies to:
 
@@ -145,13 +145,13 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      $$
 
      This is simply the product of two univariate standard normal PDFs.
-3. **Conditional Distribution**:
+3. *Conditional Distribution*:
 
    - The conditional distribution of $Y$ given $X = x$ is normal, with the following parameters:
 
      - Mean: $\mu_{Y|X} = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X)$
      - Variance: $\sigma_{Y|X}^2 = (1 - \rho^2) \sigma_Y^2$
-   - **Example**:
+   - *Example*:
 
      - Suppose $X$ and $Y$ are normally distributed with $\mu_X = 2$, $\mu_Y = 3$, $\sigma_X = 1$, $\sigma_Y = 2$, and $\rho = 0.5$. If $X = 3$, then the conditional distribution of $Y$ given $X = 3$ is:
 
@@ -170,7 +170,7 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      $$
 
      Therefore, $Y$ given $X = 3$ is normally distributed with a mean of 4 and variance of 3.
-4. **Covariance Matrix**:
+4. *Covariance Matrix*:
 
    - The covariance matrix $\Sigma$ for a bivariate normal distribution summarizes the variances and covariances of the random variables:
 
@@ -180,30 +180,23 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      \sigma_X^2 & \sigma_{XY} \\ 
      \sigma_{XY} & \sigma_Y^2 
      \end{pmatrix}
+     \end{equation}
+     $$
+   - In terms of the correlation coefficient $\rho$, the covariance $\sigma_{XY}$ is given by:
+
+     $$
+     \begin{equation}
+     \sigma_{XY} = \rho \sigma_X \sigma_Y
+     \end{equation}
      $$
 
-   \end{equation}
+     Therefore, the covariance matrix can also be expressed as:
 
-   $$
-   - In terms of the correlation coefficient $\rho$, the covariance $\sigma_{XY}$ is given by:
-   $$
-
-   \begin{equation}
-   \sigma_{XY} = \rho \sigma_X \sigma_Y
-   \end{equation}
-
-   $$
-   Therefore, the covariance matrix can also be expressed as:
-   $$
-
-   \begin{equation}
-   \Sigma = \begin{pmatrix} \sigma_X^2 & \rho \sigma_X \sigma_Y \\ \rho \sigma_X \sigma_Y & \sigma_Y^2 \end{pmatrix}
-   \end{equation}
-
-   $$
-
-
-   $$
+     $$
+     \begin{equation}
+     \Sigma = \begin{pmatrix} \sigma_X^2 & \rho \sigma_X \sigma_Y \\ \rho \sigma_X \sigma_Y & \sigma_Y^2 \end{pmatrix}
+     \end{equation}
+     $$
 
 ### Example: Computing Covariance Matrix and Joint PDF
 
@@ -213,7 +206,7 @@ Let $X$ and $Y$ be jointly normal with the following parameters:
 - $\sigma_X = 1$, $\sigma_Y = 2$
 - $\rho = 0.6$
 
-1. **Covariance Matrix**:
+1. *Covariance Matrix*:
    Using $\sigma_{XY} = \rho \sigma_X \sigma_Y = 0.6 \times 1 \times 2 = 1.2$, the covariance matrix is:
 
    $$
@@ -221,7 +214,7 @@ Let $X$ and $Y$ be jointly normal with the following parameters:
    \Sigma = \begin{pmatrix} 1 & 1.2 \\ 1.2 & 4 \end{pmatrix}
    \end{equation}
    $$
-2. **Joint PDF**:
+2. *Joint PDF*:
    The joint PDF is:
 
    $$
@@ -263,14 +256,14 @@ Let $X$ and $Y$ be normally distributed with the following parameters:
 
 Now consider $Z = X + 2Y$.
 
-1. **Mean**:
+1. *Mean*:
 
    $$
    \begin{equation}
    \mu_Z = \mu_X + 2\mu_Y = 1 + 2 \times 2 = 5
    \end{equation}
    $$
-2. **Variance**:
+2. *Variance*:
 
    $$
    \begin{equation}
@@ -280,9 +273,9 @@ Now consider $Z = X + 2Y$.
 
 Thus, $Z \sim N(5, 21)$.
 
-## Isocontours
+## Contours
 
-A simple and intuituve way to visualize and understand bi-variate gaussian random variables is by *iso-contours*. Formally, for a function $f$, **iso-contours** are defined as a set of points given by
+A simple and intuituve way to visualize and understand bi-variate gaussian random variables is by contours. Formally, for a function $f$, *contours* are defined as a set of points given by
 
 $$
 \begin{equation}
@@ -290,7 +283,7 @@ $$
    \end{equation}
 $$
 
-Now we study the shape of iso-contours, which will be helpful in visualizing 2D-Gaussian Random Variables' distribution. In order to obtain the shape of the iso-contours, we need to solve the equation $p(x;\mu,\Sigma)=c$ for some constant $c \in \mathbb{R}$.
+Now we study the shape of contours, which will be helpful in visualizing 2D-Gaussian Random Variables' distribution. In order to obtain the shape of the contours, we need to solve the equation $p(x;\mu,\Sigma)=c$ for some constant $c \in \mathbb{R}$.
 
 $$
 \begin{equation}
@@ -314,7 +307,7 @@ $$
 \end{equation}
 $$
 
-The obtained equation is that of an axis-aligned ellipse, with center $\left(\mu_1, \mu_2\right)$, where the $x_1$ axis has length $2 r_1$ and the $x_2$ axis has length $2 r_{2}$. Thus, iso-contours in gaussian random vectors are ellipses.
+The obtained equation is that of an axis-aligned ellipse, with center $\left(\mu_1, \mu_2\right)$, where the $x_1$ axis has length $2 r_1$ and the $x_2$ axis has length $2 r_{2}$. Thus, contours in gaussian random vectors are ellipses.
 
 ![alt text](./images/isocontours.png)
 

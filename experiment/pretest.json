@@ -37,24 +37,7 @@
       "difficulty": "advanced"
     },
     {
-      "question": "3: A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$? (Refer to the CDF table for standard normal distribution)",
-      "answers": {
-        "a": "$0.68$",
-        "b": "$0.95$",
-        "c": "$0.50$",
-        "d": "$0.99$"
-      },
-      "explanations": {
-        "a": "Correct! For a standard normal distribution $N(0, 1)$, about 68% of the data lies within one standard deviation from the mean.",
-        "b": "Incorrect, this is the probability for two standard deviations.",
-        "c": "This is incorrect; the value is higher.",
-        "d": "This corresponds to three standard deviations, not one."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "4: Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
+      "question": "3: Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
       "answers": {
         "a": "$\\lim_{x \\to \\infty} \\Phi(x) = 1$, $\\lim_{x \\to -\\infty} \\Phi(x) = 0$",
         "b": "$\\lim_{x \\to \\infty} \\Phi(x) = 0$, $\\lim_{x \\to -\\infty} \\Phi(x) = 1$",
@@ -71,7 +54,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "5: What is the value of the CDF of the standard normal distribution at $x = 0$?",
+      "question": "4: What is the value of the CDF of the standard normal distribution at $x = 0$?",
       "answers": {
         "a": "$\\Phi(0) = 0.5$",
         "b": "$\\Phi(0) = 0$",
@@ -87,8 +70,5 @@
       "correctAnswer": "a",
       "difficulty": "beginner"
     }
-    
-
-
   ]
 }
