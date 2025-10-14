@@ -298,8 +298,6 @@ p(x ; \mu, \Sigma)=\frac{1}{2 \pi \sigma_1 \sigma_2} \exp \left(-\frac{1}{2 \sig
 \end{equation}
 $$
 
-
-
 Defining the following parameters for $p(x;\mu,\Sigma) = c$, where $c \in \mathbb{R}$
 
 $$
