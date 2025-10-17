@@ -189,10 +189,11 @@ function updatePDFObservations(mean, variance) {
  */
 function updateSampleObservations(count, percentage) {
     let obsText = "";
+    // MODIFIED: This function has been updated to match the styling of checkAnswer()
      if (count < 150) {
-        obsText = `<p class="warning">With a small number of samples (${count}), the observed percentage (${percentage.toFixed(2)}%) can vary significantly from the theoretical value of 95.45% due to random chance.</p>`;
+        obsText = `<p class="warning"><strong>Expected Variance:</strong> With a small sample size (${count}), the observed percentage (${percentage.toFixed(2)}%) can differ significantly from the theoretical 95.45% due to random chance.</p>`;
     } else {
-        obsText = `<p class="info">With a large number of samples (${count}), the observed percentage (${percentage.toFixed(2)}%) is much closer to the theoretical value. This demonstrates the <strong>Law of Large Numbers</strong>.</p>`;
+        obsText = `<p class="correct"><strong>With many samples (${count}), the observed percentage (${percentage.toFixed(2)}%) is very close to the theoretical value.</p>`;
     }
     observationsDiv.innerHTML = obsText;
 }
