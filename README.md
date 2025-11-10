@@ -21,6 +21,12 @@ An Introduction to Gaussian Random Vectors
 | `<b>` Email id         | `<b>`  tejas.srivastava@students.iiit.ac.in |
 | `<b>` Department       | SPCRC                                         |
 
+| `<b>`Name of Developer | `<b>` Harsh Kapoor                      |
+| :----------------------- | :-------------------------------------------- |
+| `<b>` Institute        | `<b>`  IIIT Hyderabad                       |
+| `<b>` Email id         | `<b>`  harsh.kapoor@research.iiit.ac.in |
+| `<b>` Department       | SPCRC                                         |
+
 ### Contributors List
 
 | SrNo | Name                    | Faculty or Student | Department | Institute      | Email id                               |
@@ -29,3 +35,4 @@ An Introduction to Gaussian Random Vectors
 | 2    | Lalitha Vadlamani       | Faculty            | SPCRC      | IIIT Hyderabad | lalitha.v@iiit.ac.in                   |
 | 3    | Penukonda Naga Chandana | Student            | SPCRC      | IIIT Hyderabad | penukonda.chandana@students.iiit.ac.in |
 | 4    | Tejas Srivastava        | Student            | SPCRC      | IIIT Hyderabad | tejas.srivastava@students.iiit.ac.in   |
+| 5    | Harsh Kapoor            | Student            | SPCRC      | IIIT Hyderabad | harsh.kapoor@research.iiit.ac.in |

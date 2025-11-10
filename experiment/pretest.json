@@ -1,44 +1,8 @@
 {
   "version": 2.0,
   "questions": [
-    
     {
-      "question": "The median of a distribution is the value of the random variable that separates the higher and lower halves of a distribution. In Standard normal distribution, the value of median is ___________?",
-      "answers": {
-        "a": "2",
-        "b": "1",
-        "c": "0",
-        "d": "Not Fixed"
-      },
-      "explanations": {
-        "a": "In a standard normal distribution, the value of mean is 0 and in normal distribution mean and mode coincide.",
-        "b": "In a standard normal distribution, the value of mean is 0 and in normal distribution mean and mode coincide.",
-        "c": "Correct Answer!",
-        "d": "In a standard normal distribution, the value of mean is 0 and in normal distribution mean and mode coincide."
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    
-    {
-      "question": "Let $X \\sim N(2, 4)$ and $Y \\sim N(3, 9)$ be two independent Gaussian random variables. What is the distribution of $Z = X + Y$?",
-      "answers": {
-        "a": "$Z \\sim N(5, 13)$",
-        "b": "$Z \\sim N(5, 16)$",
-        "c": "$Z \\sim N(5, 81)$",
-        "d": "$Z \\sim N(5, 25)$"
-      },
-      "explanations": {
-        "a": "Correct! The mean is $E[Z] = E[X] + E[Y] = 2 + 3 = 5$, and the variance is $Var(Z) = Var(X) + Var(Y) = 4 + 9 = 13$.",
-        "b": "Incorrect variance; check the sum of variances.",
-        "c": "Incorrect variance, this is $Var(Z)$ squared.",
-        "d": "Incorrect, variance does not add up properly."
-      },
-      "correctAnswer": "a",
-      "difficulty": "intermediate"
-    },
-    {
-      "question": "Let $X \\sim N(\\mu_X, \\Sigma_X)$ be a bivariate Gaussian random vector, where $\\mu_X = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$ and $\\Sigma_X = \\begin{bmatrix} 1 & 0.5 \\\\ 0.5 & 2 \\end{bmatrix}$. Find the conditional distribution of $X_1$ given $X_2 = 1$.",
+      "question": "1: Let $X \\sim N(\\mu_X, \\Sigma_X)$ be a bivariate Gaussian random vector, where $\\mu_X = \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$ and $\\Sigma_X = \\begin{bmatrix} 1 & 0.5 \\\\ 0.5 & 2 \\end{bmatrix}$. Find the conditional distribution of $X_1$ given $X_2 = 1$.",
       "answers": {
         "a": "$X_1 | X_2 = 1 \\sim N(0.25, 0.75)$",
         "b": "$X_1 | X_2 = 1 \\sim N(0.5, 1)$",
@@ -56,7 +20,7 @@
     },
     
     {
-      "question": "Suppose $X \\sim N(\\mu_X, \\Sigma_X)$ is a Gaussian random vector in $\\mathbb{R}^2$, where $\\Sigma_X = \\begin{bmatrix} 1 & 0.7 \\\\ 0.7 & 1 \\end{bmatrix}$. What is the correlation coefficient $\\rho(X_1, X_2)$?",
+      "question": "2: Suppose $X \\sim N(\\mu_X, \\Sigma_X)$ is a Gaussian random vector in $\\mathbb{R}^2$, where $\\Sigma_X = \\begin{bmatrix} 1 & 0.7 \\\\ 0.7 & 1 \\end{bmatrix}$. What is the correlation coefficient $\\rho(X_1, X_2)$?",
       "answers": {
         "a": "$\\rho(X_1, X_2) = 0.7$",
         "b": "$\\rho(X_1, X_2) = 1.0$",
@@ -73,24 +37,7 @@
       "difficulty": "advanced"
     },
     {
-      "question": "A random variable $X$ follows a standard normal distribution $N(0, 1)$. What is $P(-1 \\leq X \\leq 1)$? (Refer to the CDF table for standard normal distribution)",
-      "answers": {
-        "a": "$0.68$",
-        "b": "$0.95$",
-        "c": "$0.50$",
-        "d": "$0.99$"
-      },
-      "explanations": {
-        "a": "Correct! For a standard normal distribution $N(0, 1)$, about 68% of the data lies within one standard deviation from the mean.",
-        "b": "Incorrect, this is the probability for two standard deviations.",
-        "c": "This is incorrect; the value is higher.",
-        "d": "This corresponds to three standard deviations, not one."
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
+      "question": "3: Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
       "answers": {
         "a": "$\\lim_{x \\to \\infty} \\Phi(x) = 1$, $\\lim_{x \\to -\\infty} \\Phi(x) = 0$",
         "b": "$\\lim_{x \\to \\infty} \\Phi(x) = 0$, $\\lim_{x \\to -\\infty} \\Phi(x) = 1$",
@@ -107,7 +54,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the value of the CDF of the standard normal distribution at $x = 0$?",
+      "question": "4: What is the value of the CDF of the standard normal distribution at $x = 0$?",
       "answers": {
         "a": "$\\Phi(0) = 0.5$",
         "b": "$\\Phi(0) = 0$",
@@ -123,8 +70,5 @@
       "correctAnswer": "a",
       "difficulty": "beginner"
     }
-    
-
-
   ]
 }

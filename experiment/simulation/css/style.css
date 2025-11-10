@@ -252,3 +252,100 @@ canvas {
         margin-bottom: 0.5rem;
     }
 }
+
+/* Grid container for the three main sliders */
+.controls-grid {
+    display: grid;
+    /* Create three equal-width columns */
+    grid-template-columns: repeat(3, 1fr); 
+    /* Add space between the sliders */
+    gap: 2rem; 
+    align-items: center;
+}
+
+/* Grid container for the action buttons/inputs below the sliders */
+.actions-grid {
+    display: grid;
+    /* Create two equal-width columns */
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Ensure the chart has enough space */
+.chart-wrapper {
+    height: 400px; /* Or any desired height */
+    margin-top: 1rem;
+}
+
+/* Make value displays slightly bolder */
+.value-display {
+    font-weight: 600;
+}
+
+/* --- Styles for gaussian-2d-pdf.html --- */
+
+.matrix-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.matrix-symbol {
+    font-size: 2rem;
+}
+
+.matrix-body {
+    position: relative; /* Needed for positioning the brackets */
+    padding: 0 10px; /* Space for the brackets */
+}
+
+/* Create the brackets using borders on pseudo-elements */
+.matrix-body::before,
+.matrix-body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px; /* Width of the horizontal serif part of the bracket */
+    height: 100%;
+    border-color: #363636;
+    border-style: solid;
+    border-width: 0;
+}
+
+/* Left bracket */
+.matrix-body::before {
+    left: 0;
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+/* Right bracket */
+.matrix-body::after {
+    right: 0;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.matrix-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    max-width: 250px;
+    padding: 0.25rem; /* Small padding inside the brackets */
+}
+
+.plots-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}

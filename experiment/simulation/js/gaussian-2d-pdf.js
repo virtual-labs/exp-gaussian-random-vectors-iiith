@@ -29,9 +29,12 @@ function update2DPlot() {
 
     const det = covXX * covYY - covXY * covXY;
     if (covXX <= 0 || covYY <= 0 || det <= 0) {
-        observations.innerHTML = "<p class='incorrect'><strong>Invalid Covariance Matrix!</strong><br>The matrix must be positive-definite. This requires:<br>1. σx² > 0 and σy² > 0.<br>2. Determinant (σx²σy² - σxy²) > 0.</p>";
+        // MODIFIED: Added MathJax to error message
+        observations.innerHTML = "<p class='incorrect'><strong>Invalid Covariance Matrix!</strong><br>The matrix must be positive-definite. This requires:<br>1. \\(\\sigma_x^2 > 0\\) and \\(\\sigma_y^2 > 0\\).<br>2. Determinant (\\(\\sigma_x^2\\sigma_y^2 - \\sigma_{xy}^2\\)) > 0.</p>";
         Plotly.purge('gaussianPlot3D');
         Plotly.purge('gaussianContourPlot');
+        // MODIFIED: Re-render MathJax after updating HTML
+        if (window.MathJax) MathJax.typesetPromise([observations]);
         return;
     }
     
@@ -77,19 +80,22 @@ function updatePlots(x, y, z, xPlotRange, yPlotRange) {
 
 function update2DObservations(meanX, meanY, varX, varY, covXY) {
     const observations = document.getElementById("observations");
+    // MODIFIED: All math text updated to use MathJax
     let obsText = "<ul>";
-    obsText += `<li>The mean vector [${meanX}, ${meanY}] has shifted the center of the distribution.</li>`;
-    obsText += `<li>The variances σx²=${varX} and σy²=${varY} control the spread along each axis.`;
+    obsText += `<li>The mean vector \\([\\mu_x, \\mu_y] = [${meanX}, ${meanY}]\\) has shifted the center of the distribution.</li>`;
+    obsText += `<li>The variances \\(\\sigma_x^2=${varX}\\) and \\(\\sigma_y^2=${varY}\\) control the spread along each axis.`;
 
     if (Math.abs(covXY) < 0.1) {
-        obsText += `<li>With covariance σxy ≈ 0, the variables are uncorrelated. The contour ellipses are aligned with the x and y axes.</li>`;
+        obsText += `<li>With covariance \\(\\sigma_{xy} \\approx 0\\), the variables are uncorrelated. The contour ellipses are aligned with the x and y axes.</li>`;
     } else if (covXY > 0) {
-        obsText += `<li>A positive covariance σxy = ${covXY} indicates a positive correlation. As x increases, y tends to increase. This tilts the ellipses upwards.</li>`;
+        obsText += `<li>A positive covariance \\(\\sigma_{xy} = ${covXY}\\) indicates a positive correlation. As x increases, y tends to increase. This tilts the ellipses upwards.</li>`;
     } else {
-        obsText += `<li>A negative covariance σxy = ${covXY} indicates a negative correlation. As x increases, y tends to decrease. This tilts the ellipses downwards.</li>`;
+        obsText += `<li>A negative covariance \\(\\sigma_{xy} = ${covXY}\\) indicates a negative correlation. As x increases, y tends to decrease. This tilts the ellipses downwards.</li>`;
     }
     obsText += "</ul>";
     observations.innerHTML = obsText;
+    // MODIFIED: Re-render MathJax after updating HTML
+    if (window.MathJax) MathJax.typesetPromise([observations]);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const covYX = document.getElementById('covYX');
     
     covXY?.addEventListener('input', () => { if (covYX) covYX.value = covXY.value; });
-    covYX?.addEventListener('input', () => { if (covXY) covXY.value = covYX.value; });
+    covYX?.addEventListener('input', () => { if (covXY) covXY.value = covXY.value; });
 });
 document.getElementById('update2DButton')?.addEventListener('click', update2DPlot);
 window.addEventListener('resize', update2DPlot);
