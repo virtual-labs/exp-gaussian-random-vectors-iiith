@@ -37,7 +37,7 @@
       "difficulty": "advanced"
     },
     {
-      "question": "3: Given the cumulative distribution function (CDF) of the standard normal distribution, what is the value of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
+      "question": "3: Given the cumulative distribution function (CDF) of the standard normal distribution, what are the values of $\\lim_{x \\to \\infty} \\Phi(x)$ and $\\lim_{x \\to -\\infty} \\Phi(x)$?",
       "answers": {
         "a": "$\\lim_{x \\to \\infty} \\Phi(x) = 1$, $\\lim_{x \\to -\\infty} \\Phi(x) = 0$",
         "b": "$\\lim_{x \\to \\infty} \\Phi(x) = 0$, $\\lim_{x \\to -\\infty} \\Phi(x) = 1$",

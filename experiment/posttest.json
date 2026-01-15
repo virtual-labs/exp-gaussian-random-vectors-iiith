@@ -38,10 +38,10 @@
     {
       "question": "3: Let $X \\sim N(0, I_2)$ be a two-dimensional standard normal random vector, where $I_2$ is the $2\\times2$ identity matrix. What is the distribution of $Y = AX$, where $A = \\begin{bmatrix} 1 & 2 \\\\ 0 & 1 \\end{bmatrix}$?",
       "answers": {
-        "a": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix})$",
-        "b": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix})$",
-        "c": "$Y \\sim N(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix})$",
-        "d": "$Y \\sim N(\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix})$"
+        "a": "$Y \\sim N\\left(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}\\right)$",
+        "b": "$Y \\sim N\\left(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix}\\right)$",
+        "c": "$Y \\sim N\\left(\\begin{bmatrix} 0 \\\\ 0 \\end{bmatrix}, \\begin{bmatrix} 1 & 1 \\\\ 1 & 1 \\end{bmatrix}\\right)$",
+        "d": "$Y \\sim N\\left(\\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 5 & 2 \\\\ 2 & 1 \\end{bmatrix}\\right)$"
       },
       "explanations": {
         "a": "Incorrect! The covariance matrix is not the identity after applying the transformation $A$.",
