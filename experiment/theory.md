@@ -11,7 +11,10 @@ A 1D Gaussian random variable $X$ denoted as $X \sim N(\mu, \sigma^2)$, is chara
 
 <p align="center">
   <img src="./images/gaussian1d.png" />
+  <br>
+  <strong>Figure 1:</strong> Probability Density Function of a 1D Gaussian Random Variable
 </p>
+
 The probability density function (PDF) of $X$ is given by:
 
 $$
@@ -52,6 +55,8 @@ Here are some properties of the $\Phi$ function that can be shown from its defin
 
 <p align="center">
   <img src="./images/gaussiancdf.png" />
+  <br>
+  <strong>Figure 2:</strong> Cumulative Distribution Function of a Standard Normal Variable
 </p>
 
 1. $\lim _{x \rightarrow \infty} \Phi(x)=1, \lim _{x \rightarrow-\infty} \Phi(x)=0$ ；
@@ -68,6 +73,8 @@ $$
 
 <p align="center">
   <img src="./images/subexp2.png" />
+  <br>
+  <strong>Figure 3:</strong> 68-95-99.7 Rule for Normal Distribution
 </p>
 
 Also, since the $\Phi$ function does not have a closed form, it is sometimes useful to use upper or lower bounds. In particular we can state the following bounds. For all $x \geq 0$,
@@ -122,6 +129,8 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
 
 <p align="center">
   <img src="./images/gaussian2d.png" />
+  <br>
+  <strong>Figure 4:</strong> Probability Density Function of a 2D Gaussian Random Variable
 </p>
 
 #### Key Properties of the Bivariate Normal Distribution
@@ -131,7 +140,6 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
    - The marginal distribution of $X$ is $X \sim N(\mu_X, \sigma_X^2)$.
    - The marginal distribution of $Y$ is $Y \sim N(\mu_Y, \sigma_Y^2)$.
    - This means that each random variable $X$ and $Y$ follows a normal distribution independently, but their joint behavior is governed by the covariance or correlation.
-
 2. _Independence_:
 
    - If $\rho = 0$, then $X$ and $Y$ are independent. In other words, zero correlation implies independence for jointly normal random variables.
@@ -144,14 +152,12 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      $$
 
      This is simply the product of two univariate standard normal PDFs.
-
 3. _Conditional Distribution_:
 
    - The conditional distribution of $Y$ given $X = x$ is normal, with the following parameters:
 
      - Mean: $\mu_{Y|X} = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X)$
      - Variance: $\sigma_{Y|X}^2 = (1 - \rho^2) \sigma_Y^2$
-
    - _Example_:
 
      - Suppose $X$ and $Y$ are normally distributed with $\mu_X = 2$, $\mu_Y = 3$, $\sigma_X = 1$, $\sigma_Y = 2$, and $\rho = 0.5$. If $X = 3$, then the conditional distribution of $Y$ given $X = 3$ is:
@@ -171,7 +177,6 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      $$
 
      Therefore, $Y$ given $X = 3$ is normally distributed with a mean of 4 and variance of 3.
-
 4. _Covariance Matrix_:
 
    - The covariance matrix $\Sigma$ for a bivariate normal distribution summarizes the variances and covariances of the random variables:
@@ -184,7 +189,6 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
      \end{pmatrix}
      \end{equation}
      $$
-
    - In terms of the correlation coefficient $\rho$, the covariance $\sigma_{XY}$ is given by:
 
      $$
@@ -217,7 +221,6 @@ Let $X$ and $Y$ be jointly normal with the following parameters:
    \Sigma = \begin{pmatrix} 1 & 1.2 \\ 1.2 & 4 \end{pmatrix}
    \end{equation}
    $$
-
 2. _Joint PDF_:
    The joint PDF is:
 
@@ -267,7 +270,6 @@ Now consider $Z = X + 2Y$.
    \mu_Z = \mu_X + 2\mu_Y = 1 + 2 \times 2 = 5
    \end{equation}
    $$
-
 2. _Variance_:
 
    $$
@@ -314,7 +316,11 @@ $$
 
 The obtained equation is that of an axis-aligned ellipse, with center $\left(\mu_1, \mu_2\right)$, where the $x_1$ axis has length $2 r_1$ and the $x_2$ axis has length $2 r_{2}$. Thus, contours in gaussian random vectors are ellipses.
 
-![alt text](./images/isocontours.png)
+<p align="center">
+  <img src="./images/isocontours.png" />
+  <br>
+  <strong>Figure 5:</strong> Isocontours (Level Curves) of a 2D Gaussian Distribution
+</p>
 
 Note that when $\sigma_1=\sigma_2$, we have $r_1=r_2$ and thus, the ellipse reduces to a circle. Also, it is interesting to note that the principal axis of the ellipse determines the covariance between the 2 marginal distributions $X$ and $Y$. A positive value of $\rho$ means a positive slope and a negative value indicates a negative slope.
 
