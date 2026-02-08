@@ -2,7 +2,7 @@ A _Gaussian random variable_ (or _Normal random variable) is a continuous random
 
 ### 1D (Univariate) Gaussian Random Variable
 
-#### Definition
+#### 1 Definition
 
 A 1D Gaussian random variable $X$ denoted as $X \sim N(\mu, \sigma^2)$, is characterized by two parameters:
 
@@ -23,7 +23,7 @@ f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2
 \end{equation}
 $$
 
-#### Properties
+#### 2 Properties
 
 1. _Symmetry_: The normal distribution is symmetric around its mean $\mu$.
 2. _Standard Normal Distribution: When $\mu = 0$ and $\sigma^2 = 1$, the Gaussian random variable is called a \*\*standard normal variable_, denoted by $Z \sim N(0, 1)$. Its PDF is:
@@ -37,7 +37,7 @@ $$
 4. _Transformation of a Gaussian Random Variable_:
    - If $X \sim N(\mu, \sigma^2)$, and we transform $Y = aX + b$, then $Y \sim N(a\mu + b, a^2\sigma^2)$.
 
-#### Cumulative Distribution Function (CDF)
+#### 3 Cumulative Distribution Function (CDF)
 
 The CDF of a standard normal variable is denoted by $\Phi(x)$, which is the probability that $X \leq x$:
 
@@ -49,7 +49,7 @@ $$
 
 However, there is no closed-form expression for $\Phi(x)$; it is generally computed numerically.
 
-#### Properties of CDF
+#### 4 Properties of CDF
 
 Here are some properties of the $\Phi$ function that can be shown from its definition.
 
@@ -85,7 +85,7 @@ $$
 \end{equation}
 $$
 
-#### Central Limit Theorem (CLT)
+#### 5 Central Limit Theorem (CLT)
 
 The CLT roughly states that the sum (or average) of a large number of independent and identically distributed (i.i.d.) random variables tends to be normally distributed, even if the original variables are not normal. We will discuss about CLT in detail in [CLT Experiment](https://virtual-labs.github.io/exp-central-limit-theorem-iiith/)
 
@@ -93,7 +93,7 @@ The CLT roughly states that the sum (or average) of a large number of independen
 
 ### 2D Gaussian Random Variable (Bivariate Normal Distribution)
 
-#### Definition
+#### 1 Definition
 
 A _bivariate normal distribution_ describes two jointly normal random variables $X$ and $Y$ with the following parameters:
 
@@ -109,7 +109,7 @@ $$
 \end{equation}
 $$
 
-#### Joint Probability Density Function (PDF)
+#### 2 Joint Probability Density Function (PDF)
 
 The joint probability density function (PDF) of $X$ and $Y$ is given by:
 
@@ -133,7 +133,7 @@ Below is an example of how pdf 2D-Gaussian Random variable looks.
   <strong>Figure 4:</strong> Probability Density Function of a 2D Gaussian Random Variable
 </p>
 
-#### Key Properties of the Bivariate Normal Distribution
+#### 3 Key Properties of the Bivariate Normal Distribution
 
 1. _Marginal Distributions_:
 
@@ -246,7 +246,7 @@ Let $X$ and $Y$ be jointly normal with the following parameters:
    \end{equation}
    $$
 
-#### Linear Combinations of Gaussian Random Variables
+#### 4 Linear Combinations of Gaussian Random Variables
 
 A key result of the bivariate normal distribution is that any linear combination of $X$ and $Y$, say $Z = aX + bY$, is also normally distributed.
 
