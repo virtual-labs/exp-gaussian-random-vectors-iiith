@@ -349,3 +349,45 @@ canvas {
     gap: 1rem;
     margin-top: 1.5rem;
 }
+
+/* =========================================
+   CRITICAL FIX: Stack VL columns on small screens
+   (NO HTML changes)
+   ========================================= */
+
+/* Force experiment + observations to stack */
+@media (max-width: 1024px) {
+    .columns {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Prevent overflow inside panels */
+.white-boxed-panel,
+.v-datalist-container {
+    overflow-x: hidden;
+}
+
+/* =========================================
+   FIX: Prevent slider overflow (NO layout change)
+   ========================================= */
+
+.controls-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* =========================================
+   Center-align lone third slider
+   (no structural changes)
+   ========================================= */
+
+.controls-grid > .field:last-child {
+    justify-self: center;
+    width: 100%;
+    max-width: 350px; /* keeps it visually balanced */
+}
