@@ -205,3 +205,10 @@ varianceSlider.addEventListener('input', updateChart);
 sampleSlider.addEventListener("input", () => {
     sampleValueLabel.textContent = sampleSlider.value;
 });
+
+/* Ensure chart resizes on orientation / viewport change */
+window.addEventListener('resize', () => {
+    if (chart) {
+        chart.resize();
+    }
+});
