@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <!-- Make sure the path to your CSS file is correct -->
+    <link rel="stylesheet" href="./css/style.css"> 
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <title>Experiment: 1D Gaussian PDF and Realizations</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Heading -->
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <h2 class="tasks-heading">Tasks</h2>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-tabs">
+                    <ul>
+                        <li class="is-active"><a>Sub Experiment - 1</a></li>
+                        <li onclick="window.location.href = 'gaussian-2d-pdf.html';"><a>Sub Experiment - 2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subheading -->
+        <div class="subheading-box">
+            <h3 class="title">1D Gaussian PDF and Sample Realizations</h3>
+        </div>
+
+        <!-- Instructions -->
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-collapsible-instruction-container v-instruction-container">
+                    <div class="v-collapsible is-size-5">Instructions</div>
+                    <div class="v-content">
+                        <p><strong>Theory:</strong> The Gaussian (Normal) distribution is defined by its mean (μ) and variance (σ²). The mean sets the center, and the variance (or its square root, the standard deviation σ) sets the spread. The 3σ rule states that for any Gaussian distribution, about 95.45% of data falls within two standard deviations of the mean, i.e., in the range [μ - 2σ, μ + 2σ].</p>
+                        <p><strong>Procedure:</strong></p>
+                        <ol>
+                            <li>Use the "Mean" and "Variance" sliders to shape the Probability Density Function (PDF). Observe how the curve changes.</li>
+                            <li>Calculate the peak height of the current PDF using the formula: \(height = \frac{1}{\sigma\sqrt{2\pi}}\). Enter it and click "Check Answer". Your answer must be within +/- 0.01 of the correct value.</li>
+                            <li>Next, use the "Number of Samples" slider to choose how many random points to generate from your configured distribution.</li>
+                            <li>Click "Generate Samples". The samples will be drawn on the chart. Samples in green fall within the [μ - 2σ, μ + 2σ] range; those in red fall outside.</li>
+                            <li>Compare the measured percentage of samples inside the range to the theoretical 95.45%. Notice how it gets closer as the number of samples increases (Law of Large Numbers).</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Interactive Panel -->
+        <div class="columns is-centered" style="margin-top: 2%;">
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="white-boxed-panel">
+                    <!-- MODIFIED: Sliders grouped into a grid container -->
+                    <div class="controls-grid">
+                        <div class="field">
+                            <label class="label" for="meanSlider">Mean (μ): <span class="value-display" id="meanValue">0</span></label>
+                            <input class="slider" type="range" id="meanSlider" min="-5" max="5" step="0.1" value="0">
+                        </div>
+                        <div class="field">
+                            <label class="label" for="varianceSlider">Variance (σ²): <span class="value-display" id="varianceValue">1</span></label>
+                            <input class="slider" type="range" id="varianceSlider" min="0.1" max="5" step="0.1" value="1">
+                        </div>
+                         <div class="field">
+                            <label class="label" for="sampleSlider">Number of Samples: <span class="value-display" id="sampleValue">10</span></label>
+                            <input type="range" class="slider" id="sampleSlider" min="10" max="1000" step="10" value="10">
+                        </div>
+                    </div>
+
+                    <hr>
+                    
+                    <!-- MODIFIED: Actions grouped into a grid container -->
+                    <div class="actions-grid">
+                        <div class="field has-addons has-addons-centered">
+                            <div class="control">
+                                <input class="input" type="text" id="height" name="height" placeholder="Calculate PDF Height">
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" type="button" onclick="checkAnswer()">Check Answer</button>
+                            </div>
+                        </div>
+                         <div class="field has-text-centered">
+                            <button class="button is-primary" onclick="generateSamples()">Generate Samples</button>
+                        </div>
+                    </div>
+
+                    <!-- Chart and Stats -->
+                    <div id="stats" style="text-align:center; font-weight: bold; margin-top: 1.5rem;"></div>
+                    <div class="chart-wrapper">
+                        <canvas id="gaussianChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- Observations Panel -->
+            <div class="column is-4-desktop is-12-tablet">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations">
+                         <p class="info">Adjust the sliders to begin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script src="./js/gaussian-1d-pdf.js"></script>
+</body>
+</html>
