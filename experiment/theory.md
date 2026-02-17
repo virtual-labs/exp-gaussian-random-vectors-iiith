@@ -282,7 +282,7 @@ Thus, $Z \sim N(5, 21)$.
 
 ### Contours
 
-A simple and intuituve way to visualize and understand bi-variate gaussian random variables is by contours. Formally, for a function $f$, _contours_ are defined as a set of points given by
+A simple and intuituve way to visualize and understand bi-variate gaussian random variables is by contours (also called level curves). Formally, for a function $f$, _contours_ are defined as a set of points given by
 
 $$
 \begin{equation}
@@ -319,7 +319,7 @@ The obtained equation is that of an axis-aligned ellipse, with center $\left(\mu
 <p align="center">
   <img src="./images/isocontours.png" />
   <br>
-  <strong>Figure 5:</strong> Isocontours (Level Curves) of a 2D Gaussian Distribution
+  <strong>Figure 5:</strong> Contours (Level Curves) of a 2D Gaussian Distribution
 </p>
 
 Note that when $\sigma_1=\sigma_2$, we have $r_1=r_2$ and thus, the ellipse reduces to a circle. Also, it is interesting to note that the principal axis of the ellipse determines the covariance between the 2 marginal distributions $X$ and $Y$. A positive value of $\rho$ means a positive slope and a negative value indicates a negative slope.

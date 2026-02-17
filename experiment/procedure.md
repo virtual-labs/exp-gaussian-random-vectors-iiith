@@ -5,7 +5,7 @@ This section contains three sub-experiments designed to enhance the student's un
 1. Use the **Mean (μ)** and **Variance (σ²)** sliders to shape the Gaussian PDF curve.
 2. Calculate the peak height for the current variance, enter it in the input box, and click **Check Answer** to verify.
 3. Select the desired number of data points with the **Number of Samples** slider.
-4. Click\*\* **"Generate Samples"** to draw random realizations from your configured distribution on the chart.
+4. Click **"Generate Samples"** to draw random realizations from your configured distribution on the chart.
 5. Observe the percentage of samples that fall within the two-sigma range (**[μ - 2σ, μ + 2σ]**), indicated by the green lines, and compare it to the theoretical value of 95.45%.
 
 ### Experiment 2: 2D Gaussian PDF Visualization
