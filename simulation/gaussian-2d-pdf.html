@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.10.0/plotly.min.js"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title>Experiment 2: 2D Gaussian PDF</title>
+</head>
+<body>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <h2 class="tasks-heading">Tasks</h2>
+            </div>
+        </div>
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-tabs">
+                    <ul>
+                        <li onclick="window.location.href = 'gaussian-1d-pdf.html';"><a>Sub Experiment - 1</a></li>
+                        <li class="is-active"><a>Sub Experiment - 2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="subheading-box">
+            <h3 class="title">2D Gaussian PDF</h3>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column">
+                <div class="v-collapsible-instruction-container v-instruction-container">
+                    <div class="v-collapsible is-size-5">Instructions</div>
+                    <div class="v-content">
+                        <p><strong>Theory:</strong> The 2D Gaussian distribution extends the concept to two random variables. It is defined by a mean vector \([\mu_x, \mu_y]\) and a 2x2 covariance matrix \(\Sigma\). This matrix must be symmetric and positive-definite.</p>
+                        <p><strong>Procedure:</strong></p>
+                        <ol>
+                            <li>Set the center of the distribution using the "Mean Vector" inputs.</li>
+                            <li>Define the shape and orientation of the distribution with the "Covariance Matrix" inputs. Note that \(\sigma_{xy}\) must equal \(\sigma_{yx}\).</li>
+                            <li>The variances (\(\sigma_x^2, \sigma_y^2\)) control the spread along the axes.</li>
+                            <li>The covariance (\(\sigma_{xy}\)) controls the correlation between the variables and the tilt of the distribution.</li>
+                            <li>Press the "Update 2D Gaussian" button to visualize the changes. The plots will automatically re-center on the mean.</li>
+                        </ol>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                            <li>Understand how the mean vector moves the entire distribution in the 2D plane.</li>
+                            <li>Observe how changing \(\sigma_x^2\) and \(\sigma_y^2\) stretches the distribution along the x and y axes.</li>
+                            <li>See how a non-zero covariance (\(\sigma_{xy}\)) creates correlation and tilts the elliptical contours. A positive covariance tilts up, a negative one tilts down.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2%;">
+            <div class="column is-8-desktop is-12-tablet">
+                <div class="white-boxed-panel">
+                    <h3 class="title is-5" style="text-align: center;">2D Gaussian Distribution</h3>
+                    <div class="field">
+                        <label class="label">Mean Vector \([\mu_x, \mu_y]\):</label>
+                        <div class="columns">
+                            <div class="column"><input class="input" type="number" id="meanX" value="0" step="0.1" placeholder="μx"></div>
+                            <div class="column"><input class="input" type="number" id="meanY" value="0" step="0.1" placeholder="μy"></div>
+                        </div>
+                    </div>
+                    <!-- FIXED: Simplified HTML for CSS-based brackets -->
+                    <div class="field">
+                        <label class="label">Covariance Matrix \(\Sigma\):</label>
+                        <div class="matrix-container">
+                             <div class="matrix-symbol">\(\Sigma = \)</div>
+                             <div class="matrix-body">
+                                <div class="matrix-inputs">
+                                    <input class="input" type="number" id="covXX" value="1" step="0.1" min="0.1" title="\sigma_x^2">
+                                    <input class="input" type="number" id="covXY" value="0" step="0.1" title="\sigma_{xy}">
+                                    <input class="input" type="number" id="covYX" value="0" step="0.1" title="\sigma_{yx}">
+                                    <input class="input" type="number" id="covYY" value="1" step="0.1" min="0.1" title="\sigma_y^2">
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="has-text-centered">
+                        <button id="update2DButton" class="button is-primary">Update 2D Gaussian</button>
+                    </div>
+                    <div class="plots-container">
+                        <div id="gaussianPlot3D"></div>
+                        <div id="gaussianContourPlot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4-desktop is-12-tablet">
+                <div class="v-datalist-container components-list">
+                    <div class="v-datalist-title">Observations</div>
+                    <div id="observations">
+                        <p class="info">Enter valid parameters and click update to generate the plots and see observations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script src="./js/gaussian-2d-pdf.js"></script>
+</body>
+</html>

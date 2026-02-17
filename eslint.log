@@ -1,0 +1,19 @@
+
+/home/runner/work/exp-gaussian-random-vectors-iiith/exp-gaussian-random-vectors-iiith/experiment/simulation/js/gaussian-1d-pdf.js
+   24:17  warning  'Chart' is not defined                       no-undef
+   87:10  warning  'generateSamples' is defined but never used  no-unused-vars
+  150:10  warning  'checkAnswer' is defined but never used      no-unused-vars
+
+/home/runner/work/exp-gaussian-random-vectors-iiith/exp-gaussian-random-vectors-iiith/experiment/simulation/js/gaussian-2d-pdf.js
+   25:9   warning  'Plotly' is not defined              no-undef
+   26:9   warning  'Plotly' is not defined              no-undef
+   34:9   warning  'Plotly' is not defined              no-undef
+   35:9   warning  'Plotly' is not defined              no-undef
+   37:29  warning  'MathJax' is not defined             no-undef
+   77:5   warning  'Plotly' is not defined              no-undef
+   78:5   warning  'Plotly' is not defined              no-undef
+   98:25  warning  'MathJax' is not defined             no-undef
+  107:71  warning  'covXY.value' is assigned to itself  no-self-assign
+
+✖ 12 problems (0 errors, 12 warnings)
+
